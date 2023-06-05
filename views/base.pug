@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    block head
+          meta(charset='utf-8')
+          title Natours | #{title}
+          link(rel='stylesheet', href='/css/style.css')
+          meta(http-equiv="Content-Security-Policy" content="default-src 'self' https://*.mapbox.com https://cdnjs.cloudflare.com; script-src 'self' https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com https://cdnjs.cloudflare.com ; worker-src  blob: ; child-src  blob: ; img-src 'self' data: blob: ;   connect-src 'self' https://*.tiles.mapbox.com https://api.mapbox.com https://events.mapbox.com https://cdnjs.cloudflare.com ;   style-src   'self'  https: 'unsafe-inline' ;  font-src https://*.googleapis.com https://fonts.gstatic.com ; ")
+  body
+
+    //- Header    
+    include _header
+
+    //- Content
+    section.overview 
+      h1=_tour 
+
+      block content 
+
+    //- Footer
+    include _footer
+
+    script(src='https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js')
+    //- script(src="/js/mapBox.js") 
+    script(src="/js/login.js")
