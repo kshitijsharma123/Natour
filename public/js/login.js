@@ -1,4 +1,4 @@
-axios.defaults.withCredentials = true
+axios.defaults.withCredentials = true;
 
 const login = async (email, password) => {
   try {
@@ -10,9 +10,16 @@ const login = async (email, password) => {
         password,
       },
     });
+
+    if (res.data.status === "success") {
+      alert("You are logged in man or women or nowdays whatever");
+      window.setTimeout(() => {
+        location.assign("/");
+      }, 1500);
+    }
     console.log(res.data);
   } catch (err) {
-    console.log(err);
+    alert(err)
   }
 };
 
